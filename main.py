@@ -27,10 +27,7 @@ def createimage(prompt, negative_prompt):
     negative_prompt=negative_prompt,
     width=512,
     height=512,
-    guidance_scale=12,
-    target_size=(1024,1024),
-    original_size=(4096,4096),
-    num_inference_steps=50
+    num_inference_steps=30
   ).images[0]
   image.save(".config/image.png")
   with open(".config/image.png", "r") as file:
