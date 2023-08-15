@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 class Txt2ImgSchemas(BaseModel):
-  prompt: str,
+  prompt: str
   negative_prompt: str = None
