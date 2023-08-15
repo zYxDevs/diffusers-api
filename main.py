@@ -43,8 +43,8 @@ app = FastAPI()
 @app.post("/api/txt2img/")
 def txt2img(data: Txt2ImgSchemas):
   try:
-    prompt: data.prompt
-    negative_prompt: data.negative_prompt
+    prompt = data.prompt
+    negative_prompt = data.negative_prompt
     resolve = createimage(prompt, negative_prompt)
     
     return {
