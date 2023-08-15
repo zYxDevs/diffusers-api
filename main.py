@@ -4,7 +4,7 @@ import base64
 
 from torch import autocast
 from PIL import Image
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from Schemas import Txt2ImgSchemas
 
