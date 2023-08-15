@@ -5,21 +5,20 @@ import base64
 from torch import autocast
 from PIL import Image
 from fastapi import FastAPI
-from diffusers import StableDiffusionXLPipeline, DPMSolverMultistepScheduler
+from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from Schemas import Txt2ImgSchemas
 
-pipe = StableDiffusionXLPipeline.from_pretrained(
-  "Linaqruf/animagine-xl",
+pipe = StableDiffusionPipeline.from_pretrained(
+  "Linaqruf/anything-v3.0",
   use_safetensors=True,
-  torch_dtype=torch.float16,
-  variant="fp16"
+  torch_dtype=torch.float16
 )
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(
   pipe.scheduler.config,
   use_karras_sigmas=True
 )
 pipe.to("cuda")
-pipe.load_lora_weights("Linaqruf/pastel-anime-xl-lora", weight_name="pastel-anime-xl.safetensors")
+pipe.load_lora_weights("LoRa", weight_name="light_and_shadow.safetensors")
 
 
 def createimage(prompt, negative_prompt):
