@@ -9,7 +9,7 @@ from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from Schemas import Txt2ImgSchemas
 
 pipe = StableDiffusionPipeline.from_pretrained(
-  "Linaqruf/anything-v3.0",
+  "hakurei/waifu-diffusion",
   use_safetensors=True,
   torch_dtype=torch.float16
 )
