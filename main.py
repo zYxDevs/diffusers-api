@@ -51,7 +51,7 @@ def txt2img(data: Txt2ImgSchemas):
       "images": [resolve]
     }
   except Exception as error:
-    raise HTTPException(status_code=404, message=str(error))
+    raise HTTPException(status_code=404, detail=str(error))
 
 
 
