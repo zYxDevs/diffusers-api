@@ -30,8 +30,8 @@ def createimage(prompt, negative_prompt):
     num_inference_steps=30
   ).images[0]
   image.save(".config/image.png")
-  with open(".config/image.png", "r") as file:
-    base_64 = base64.b64encode(file).decode("utf-8")
+  with open(".config/image.png", "rb") as file:
+    base_64 = base64.b64encode(file.read()).decode("utf-8")
   return base_64
   
 
