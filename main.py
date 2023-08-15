@@ -18,7 +18,7 @@ pipe.scheduler = DPMSolverMultistepScheduler.from_config(
   use_karras_sigmas=True
 )
 pipe.to("cuda")
-pipe.load_lora_weights("LoRa", weight_name="light_and_shadow.safetensors")
+#pipe.load_lora_weights("LoRa", weight_name="light_and_shadow.safetensors")
 
 
 def createimage(prompt, negative_prompt):
