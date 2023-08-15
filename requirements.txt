@@ -1,8 +1,8 @@
-torch
+torch
 diffusers
 fastapi
 uvicorn
-invisible_watermark 
-transformers 
-accelerate 
+invisible_watermark
+transformers
+accelerate
 safetensors
